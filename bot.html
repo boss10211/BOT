@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пройдите  каптчу</title>
+    <script>
+        // Function to generate a random captcha
+        function generateCaptcha() {
+            let captcha = Math.floor(Math.random() * 10000) + 1;
+            document.getElementById("captchaValue").innerText = captcha;
+            return captcha;
+        }
+
+        // Function to validate the captcha input
+        function validateCaptcha() {
+            let userInput = document.getElementById("captchaInput").value;
+            let captcha = document.getElementById("captchaValue").innerText;
+
+            if (userInput == captcha) {
+                document.getElementById("result").innerText = "Пройдите  каптчу!";
+                document.getElementById("botButton").style.display = "inline-block";
+            } else {
+                document.getElementById("result").innerText = "Incorrect CAPTCHA. Try again.";
+                document.getElementById("botButton").style.display = "none";
+            }
+        }
+
+        window.onload = generateCaptcha;
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+
+           background-image: url('https://umbphotos.ag/images/375b18fa3ffcc616179b8cf6ed4732c6.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        #botButton {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Пройдите  каптчу</h1>
+    <p id="captchaValue"></p>
+    <input type="text" id="captchaInput" placeholder="Enter CAPTCHA">
+    <button onclick="validateCaptcha()">Проверить</button>
+    <p id="result"></p>
+    <button id="botButton" onclick="window.location.href='https://t.me/JHVhbv_bot'">Go to Bot</button>
+</body>
+</html>
